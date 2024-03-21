@@ -1,0 +1,6 @@
+<div *ngFor="let card of cards">
+  <pre>{{ card.name }}</pre>
+</div>
+<div>
+  <button mat-raised-button (click)="openCreateCardDialog()">Neue Karte erstellen</button>
+</div>

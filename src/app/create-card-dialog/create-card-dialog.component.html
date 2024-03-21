@@ -1,0 +1,23 @@
+<h1 mat-dialog-title>Neue Karte erstellen</h1>
+<div mat-dialog-content>
+  <form #createForm="ngForm" (ngSubmit)="onSubmit(createForm)">
+    <mat-form-field>
+      <input matInput placeholder="Name" name="name" [(ngModel)]="formData.name" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Kartentyp" name="card_type" [(ngModel)]="formData.card_type" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Seltenheit" name="rarity" [(ngModel)]="formData.rarity" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Version" name="version" [(ngModel)]="formData.version" required>
+    </mat-form-field>
+    <mat-checkbox [(ngModel)]="formData.is_foil" name="is_foil">Ist foil?</mat-checkbox>
+    <mat-checkbox [(ngModel)]="formData.is_full_art" name="is_full_art">Ist Full Art?</mat-checkbox>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="cancel()">Abbrechen</button>
+  <button mat-button [mat-dialog-close]="formData" [disabled]="createForm.invalid">Speichern</button>
+</div>
